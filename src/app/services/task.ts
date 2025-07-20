@@ -17,24 +17,7 @@ export class TaskService {
   private currentId = 1;
 
   constructor() {
-
-/* const savedTasks = localStorage.getItem('tasks');
-
-if(savedTasks){
-  this.tasksSubject.next(JSON.parse(savedTasks))
-  this.currentId = this.getNextId(JSON.parse(savedTasks));
-} */
-
-   
-
-
-
-
-
-
-/* <----- A PARTIR DE AQUÍ LA TAREA QUE SE REALIZÓ -----> */
     const storedTasks = localStorage.getItem(key)
-    /* this.addTask('Lavar Dientes') */
 
     if (storedTasks) {
       const parseTasks: Task[] = JSON.parse(storedTasks)
@@ -55,16 +38,6 @@ if(savedTasks){
     return this.tasksSubject.asObservable();
   }
 
-/* 
- private getNextId(tasks: Task[]): number{
-      const maxId = tasks.reduce((max,task)=> Math.max(max, task.id), 0);
-      return maxId+ 1;
-    }
-
-    private updateLocalStorage(tasks: Task[]): void{
-      localStorage.setItem('tasks', JSON.stringify(tasks))
-    }
- */
   addTask(title: string): void {
     const newTask: Task = {
       id: this.currentId++,
@@ -73,7 +46,6 @@ if(savedTasks){
     };
     const updateTasks = [...this.tasksSubject.getValue(), newTask]
     this.tasksSubject.next(updateTasks)
-/*     this.updateLocalStorage(updateTasks); */
   }
 
   toggleCompleted(taskId: number): void {
