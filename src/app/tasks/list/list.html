@@ -1,0 +1,8 @@
+
+
+<ul>
+
+   <app-task-item *ngFor="let task of tasks" [task]="task" (complete)="cambioCheckbox($event)">
+   </app-task-item>
+
+</ul>

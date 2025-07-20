@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <form novalidate [formGroup]="taskForm" (ngSubmit)="addTarea()">
+
+    <div class="input-group mb-3 w-50">
+      <input type="text" class="form-control shadow-sm" formControlName="title" required />
+      <button type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Agregar</button>
+
+    </div>
+  </form>
+</div>

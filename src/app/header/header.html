@@ -1,0 +1,8 @@
+<div class="nav bg-primary">
+    <p class="text-white mt-3 mx-4 fs-4 fst-italic">{{ 'appangular' | alternate }}</p>
+    <div class="ms-auto d-flex align-items-center gap-3">
+        <p class=" fs-4 mt-3 mx-1"><span class="fw-bold">Fecha actual: </span> {{ today | date: 'fullDate'}}</p>
+        <button *ngIf="session" class="btn btn-primary btn-outline-light mt-3 mx-3" (click)="Logout()">Cerrar
+            sesión</button>
+    </div>
+</div>
